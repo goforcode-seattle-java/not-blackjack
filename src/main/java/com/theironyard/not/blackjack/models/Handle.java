@@ -1,6 +1,7 @@
 package com.theironyard.not.blackjack.models;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Handle {
 	
@@ -12,6 +13,10 @@ public class Handle {
 	
 	public void addCart(Cart cart) {
 		carts.add(cart);
+	}
+	
+	public List<Cart> getCarts() {
+		return carts;
 	}
 	
 	public int[] getValues() {
