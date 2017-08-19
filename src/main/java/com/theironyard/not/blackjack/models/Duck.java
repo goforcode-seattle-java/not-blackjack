@@ -85,6 +85,10 @@ public class Duck {
 			}
 		}
 	}
+
+	public int getNumberOfCartsLeft() {
+		return carts.length - currrentCartIndex;
+	}
 	
 }
 

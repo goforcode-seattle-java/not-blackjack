@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Not Blackjack</title>
+    <link rel="stylesheet"
+        href="/css/styles.css">
+  </head>
+  <body>
+    <div class="table">
+      <div class="dealer-side">
+          <div>
+            {{#deeder.carts}}
+              <span class="cart">
+                {{ visualRepresentation }}
+                {{ soot }}
+              </span>
+            {{/deeder.carts}}
+          </div>
+      </div>
+      <hr>
+      <div class="player-side">
+        <div>
+          {{#plater.carts}}
+            <span class="cart">
+              {{ visualRepresentation }}
+              {{ soot }}
+            </span>
+          {{/plater.carts}}
+        </div>
+        {{#roundState}}
+          <div>
+            Your current bet: {{ currentBet }}
+          </div>
+          <div>
+            <form action="/hit" method="post">
+              <button>Hit</button>
+            </form>
+            <form action="/stand" method="post">
+              <button>Stand</button>
+            </form>
+          </div>
+        {{/roundState}}
+        {{#betState}}
+          <div>
+            <form method="post" action="/bet">
+              <input type="number" name="bet">
+              <button>Ante</button>
+            </form>
+          </div>
+        {{/betState}}
+        <div>
+          What's in your wallet? ${{ plater.availableCash }}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
